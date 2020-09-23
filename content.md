@@ -1,6 +1,10 @@
 <!-- .slide: class="slide-title" -->
 
-# Title
+<div class="vertical">
+
+<div class="title">
+<h1>Introducción a Git</h1>
+</div>
 
 ## [Santiago Soler](https://santisoler.github.io)
 
@@ -28,7 +32,221 @@
 </div>
 </div>
 
+</div>
+
 ---
+
+Pueden ver las slides en:
+
+<img class="r-stretch" src="images/qr.svg">
+
+https://santisoler.github.io/git-intro-geolatinas
+
+<p class="license-icons">
+<i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-by"></i>
+</p>
+
+---
+
+# Recursos
+
+- [Software Carpentry Lesson](https://swcarpentry.github.io/git-novice)
+- [Pro Git (libro)](https://git-scm.com/book/en/v2)
+- [Git Workflow](https://www.asmeurer.com/git-workflow/)
+- [Te lo explico con gatitos](https://teloexplicocongatitos.com/poster?id=tlecg04)
+
+---
+
+# ¿Qué es Git?
+
+<h2 class="fragment">
+Software de control de versiones
+</h2>
+
+<p class="emoji fragment">
+🤨
+</p>
+
+---
+
+<img src="images/piled-higher-and-deeper.png" alt="" style="height: 95vh">
+
+<div class="bottom">
+<a href="http://phdcomics.com/comics/archive.php?comicid=1531">
+"Piled Higher and Deeper" by Jorge Cham
+</a>
+</div>
+
+---
+
+## Añadir cambios
+
+<img src="images/play-changes.svg" alt="" style="height: 70vh">
+
+---
+
+## Crear diferentes versiones
+
+<img src="images/versions.svg" alt="" style="height: 90vh">
+
+---
+
+## Incorporar cambios de dos versiones
+
+<img src="images/merge.svg" alt="" style="height: 90vh">
+
+---
+
+# ¿Cómo funciona?
+
+- Repositorio
+- Ramas
+- Commits
+
+---
+
+# Git Workflow
+
+<div class="r-stack">
+<img class="fragment fade-out" data-fragment-index="0" src="images/git-repo-1.svg" alt="">
+<img class="fragment current-visible" data-fragment-index="0" src="images/git-repo-2.svg" alt="">
+<img class="fragment current-visible" src="images/git-repo-3.svg" alt="">
+<img class="fragment current-visible" src="images/git-repo-4.svg" alt="">
+<img class="fragment current-visible" src="images/git-repo-5.svg" alt="">
+<img class="fragment current-visible" src="images/git-repo-6.svg" alt="">
+<img class="fragment" src="images/git-repo-7.svg" alt="">
+</div>
+
+---
+
+# GIT
+
+<div class="container" style="align-items: center;">
+
+<div class="col-4">
+<img class="fragment" src="images/delorean.jpg" alt="">
+</div>
+<div class="column">
+<h1 class="fragment">+</h1>
+</div>
+<div class="col-4">
+<img class="fragment" src="images/rick-morty.jpeg" alt="">
+</div>
+
+</div>
+
+---
+
+# Ventajas de Git
+
+- Distribuido
+- Open-source
+- Historia completa
+- Facilita la colaboración
+- Servidores gratuitos para repositorios
+
+---
+
+<img src="images/github.svg" alt="" style="width: 70vw;">
+
+---
+
+Primero veamos cómo usar Git...
+
+---
+
+# Instalar git
+
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+ó
+
+https://desktop.github.com/
+
+---
+
+# Configuración básica
+
+```bash
+$ git config --global user.name "Marie Tharp"
+$ git config --global user.email "marie_tharp@umich.edu"
+```
+
+---
+
+# Crear un repositorio
+
+```bash
+$ mkdir mi_repositorio
+$ cd mi_repositorio
+$ git init
+```
+
+---
+
+# Hacer un commit
+
+<img src="images/git-staging-area.svg" alt="" style="width: 80%;" >
+
+
+---
+
+# Hacer un commit
+
+<ol>
+<li class="fragment fade-in">Creamos o modificamos uno o más archivos</li>
+<li class="fragment fade-in">
+Agregamos los cambios a stage area
+
+```bash
+$ git add .
+```
+
+</li>
+<li class="fragment fade-in">
+Creamos el commit
+
+```bash
+$ git commit
+```
+
+</li>
+</ol>
+
+</div>
+
+---
+
+# Comandos útiles
+
+1. Ver el estado del repositorio
+    ```bash
+    $ git status
+    ```
+2. Ver el historial de la rama
+    ```bash
+    $ git log
+    ```
+3. Ver diferencias en el working directory
+    ```bash
+    $ git diff
+    ```
+
+---
+
+# Crear una nueva rama
+
+1. Crear una nueva rama
+    ```bash
+    $ git branch nueva_rama
+    ```
+2. Movernos a esa rama
+    ```bash
+    $ git checkout nueva_rama
+    ```
+
+---
+
 
 # Regular slide
 
