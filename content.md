@@ -51,8 +51,8 @@ https://santisoler.github.io/git-intro-geolatinas
 # Recursos
 
 - [Software Carpentry Lesson](https://swcarpentry.github.io/git-novice)
-- [Pro Git (libro)](https://git-scm.com/book/en/v2)
 - [Git Workflow](https://www.asmeurer.com/git-workflow/)
+- [Pro Git (libro)](https://git-scm.com/book/en/v2)
 - [Te lo explico con gatitos](https://teloexplicocongatitos.com/poster?id=tlecg04)
 
 ---
@@ -83,13 +83,13 @@ Software de control de versiones
 
 <img src="images/play-changes.svg" alt="" style="height: 70vh">
 
----
+----
 
 ## Crear diferentes versiones
 
 <img src="images/versions.svg" alt="" style="height: 90vh">
 
----
+----
 
 ## Incorporar cambios de dos versiones
 
@@ -157,11 +157,31 @@ Primero veamos cómo usar Git...
 
 # Instalar git
 
-https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+[Instrucciones de Software Carpentry](https://carpentries.github.io/workshop-template/#setup)
 
-ó
+<div class="container" style="margin-top: 10vh;">
+<div class="column">
 
-https://desktop.github.com/
+## Windows
+
+[Git for Windows](https://gitforwindows.org/)
+
+</div>
+<div class="column">
+
+## Mac OS
+
+[git-osx-installer](https://sourceforge.net/projects/git-osx-installer/files/)
+
+</div>
+<div class="column">
+
+## Linux
+
+Gestor de paquetes.
+
+</div>
+</div>
 
 ---
 
@@ -234,7 +254,24 @@ $ git commit
 
 ---
 
+# NOTA
+
+- La rama que Git crea por defecto se suele llamar `master`.
+- `master` posee connotaciones negativas.
+- GitHub la renombra a `main` a partir del 1ero de Octubre de 2020.
+
+Pueden cambiarla en sus computadoras con:
+
+```
+$ git config --global init.defaultBranch main
+```
+
+---
+
 # Crear una nueva rama
+
+<div class="r-stack">
+<ol class="fragment current-visible">
 
 1. Crear una nueva rama
     ```bash
@@ -245,100 +282,187 @@ $ git commit
     $ git checkout nueva_rama
     ```
 
----
-
-
-# Regular slide
-
-## With subtitles
-
----
-
-# Do you want columns?
-
-<div class="container">
-
-<div class="column">
-<img src="images/about.jpg" style="margin-top: 5%; border-radius: 50%; width: 80%;">
-</div>
-
-<div class="col-2">
-<div class="centered">
-
-* Licenciado en Física (UNR)
-* Estudiante de Doctorado en Geofísica (UNSJ)
-* Becario Doctoral de CONICET
-* Desarrollador de [Fatiando a Terra](https://www.fatiando.org)
-* Miembro de [Computer-Oriented Geoscience Lab](https://www.compgeolab.org)
-
-</div>
-</div>
-
-</div>
-
----
-
-# You can add fade-in animations
-
-<div class="container">
-
-<div class="column fragment fade-in">
-
-First element
-
-</div>
-
-<div class="column fragment fade-in">
-
-Second element
-
-</div>
-
-</div>
-
----
-
-## Even on lists
-
-<ul>
-<li class="fragment fade-in">First element</li>
-<li class="fragment fade-in">Second element</li>
-<li class="fragment fade-in">Third element</li>
-</ul>
-
----
-
-## Highlight current item on list
-
-<ol>
-<li class="fragment highlight-current-blue">First element</li>
-<li class="fragment highlight-current-blue">Second element</li>
-<li class="fragment highlight-current-blue">Third element</li>
 </ol>
 
----
+<div class="fragment current-visible">
 
-# You can put footnotes
+O podemos usar el nuevo comando 🚀
 
-<div class="bottom">
-
-https://www.blog.pythonlibrary.org/2019/04/11/python-used-to-take-photo-of-black-hole/
-
+```bash
+$ git switch --create nueva_rama
+```
+</div>
 </div>
 
 ---
 
-<!-- .slide: data-background-color="#FAFAFA" -->
+# Merge
 
-## You can change the background color
+Queremos mergear la `nueva_rama` en `main`.
+
+1. Nos movemos a `main`:
+    ```bash
+    $ git switch main
+    ```
+2. Traemos los cambios de `nueva_rama` a `main`:
+    ```bash
+    $ git merge nueva_rama
+    ```
 
 ---
 
-## Add quotes
+Ahora sí, veamos cómo trabajar en
 
-<blockquote>
-This is a quote
-</blockquote>
+<img src="images/github.svg" alt="" style="width: 70%;">
+
+---
+
+Pero primero, un descanso...
+
+☕ 🥤 🧉 🍵 🥛 🍷 🍺
+
+---
+
+<img src="images/github.svg" alt="" style="width: 40%;">
+
+- Nos permite almacenar repositorios "en la nube"
+- Facilita la colaboración
+- Issues y PullRequests
+- Mucho más:
+    - Code review
+    - Releases
+    - Continuous Integration
+    - GitHub Pages
+
+---
+
+# Por ejemplo
+
+https://github.com/aguspesce/practica_geolatinas
+
+---
+
+# Crear un repositorio en GitHub
+
+<div class="r-stack">
+<img class="fragment current-visible" src="images/github-create-repo-01.png" alt="" style="width: 50%">
+<img class="fragment current-visible" src="images/github-create-repo-02.png" alt="" style="width: 50%">
+</div>
+
+---
+
+# Subir cambios a GitHub
+
+<div class="r-stack">
+<img class="fragment current-visible" src="images/git-staging-area.svg" alt="" style="width: 50%">
+<img class="fragment current-visible" src="images/git-freshly-made-github-repo.svg" alt="" style="width: 50%">
+<img class="fragment current-visible" src="images/github-repo-after-first-push.svg" alt="" style="width: 50%">
+</div>
+
+---
+
+
+# Subir cambios a GitHub
+
+1. Agrego dirección de repo de GitHub bajo el nombre `origin`:
+    ```bash
+    $ git remote add origin DIRECCION
+    ```
+2. Verificamos que esté bien configurado
+    ```bash
+    $ git remote -v
+    ```
+3. Subimos los cambios al repositorio de  GitHub
+    ```bash
+    $ git push origin main
+    ```
+
+----
+
+Asociar rama local con rama remota
+
+```bash
+$ git push --upstream origin main
+```
+
+---
+
+# Descargar cambios desde GitHub
+
+
+Podemos usar `git pull`:
+
+```bash
+$ git pull origin main
+```
+
+Si nuestra rama está asociada, podemos simplificarlo:
+```bash
+$ git pull
+```
+
+---
+
+# ¿Cómo colaborar?
+
+<div class="r-stack">
+<img class="fragment current-visible" src="images/contribute-github-1.svg" style="width: 80vw">
+<img class="fragment current-visible" src="images/contribute-github-2.svg" style="width: 80vw">
+<img class="fragment current-visible" src="images/contribute-github-3.svg" style="width: 80vw">
+<img class="fragment current-visible" src="images/contribute-github-4.svg" style="width: 80vw">
+<img class="fragment current-visible" src="images/contribute-github-5.svg" style="width: 80vw">
+<img class="fragment current-visible" src="images/contribute-github-6.svg" style="width: 80vw">
+</div>
+
+---
+
+# ¿Cómo colaborar?
+
+1. Descargamos el repositorio
+    ```bash
+    $ git clone https://github.com/aguspesce/practica_geolatinas
+    ```
+2. Hacemos un Fork desde GitHub
+3. Agregamos el remote de nuestro fork
+    ```bash
+    $ git remote add santisoler https://github.com/santisoler/practica_geolatinas
+    ```
+
+----
+
+4. Creamos una nueva rama
+    ```bash
+    $ git switch --create agrega-santi
+    ```
+5. Realizamos cambios y agregamos commits
+    ```bash
+    $ git add .
+    $ git commit
+    ```
+6. Subimos nuestros cambios a nuestro fork
+    ```bash
+    $ git push --upstream santisoler agrega-santi
+    ```
+7. Abrimos un PullRequest desde GitHub
+
+---
+
+# Consejos y recomendaciones
+
+- Contribuciones != Código
+- Código de Conducta
+- Licencia de Software
+- Canales de comunicación
+
+
+---
+
+# Cosas de Interés
+
+- [Hacktoberfest 2020](https://hacktoberfest.digitalocean.com/)
+- [Fatiando a Terra](https://www.fatiando.org)
+- [Software Underground](https://softwareunderground.org/)
+- [Journal of Open Source Software](https://joss.theoj.org/)
 
 ---
 

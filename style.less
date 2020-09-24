@@ -1,5 +1,6 @@
 @basefontsize: 70px;
 @lightcolor: #ffffff;
+@codelightcolor: #E6C07B;
 @midgreycolor: #252525;
 @darkcolor: #191919;
 
@@ -23,7 +24,13 @@
     }
   }
   li {
-    margin-bottom: 5%;
+    line-height: 2.2em;
+  }
+
+  ol li li,
+  ul li li {
+    line-height: 1.2em;
+    font-size: @basefontsize * 0.7;
   }
 
   p.emoji {
@@ -31,12 +38,13 @@
   }
 
   pre {
-    max-width: 90%;
-    min-width: 60vw;
+    /*   max-width: 90%; */
+    min-width: 800px;
 
     code {
-      font-size: @basefontsize * 0.6;
-      line-height: @basefontsize * 0.9;
+      /*     color: none; */
+      font-size: @basefontsize * 0.5;
+      line-height: @basefontsize * 0.8;
     }
   }
 
