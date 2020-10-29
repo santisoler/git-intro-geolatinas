@@ -53,7 +53,7 @@ https://santisoler.github.io/git-intro-geolatinas
 - [Software Carpentry Lesson](https://swcarpentry.github.io/git-novice)
 - [Git Workflow](https://www.asmeurer.com/git-workflow/)
 - [Pro Git (libro)](https://git-scm.com/book/en/v2)
-- [Te lo explico con gatitos](https://teloexplicocongatitos.com/poster?id=tlecg04)
+- [Te lo explico con gatitos](https://teloexplicocongatitos.com/poster/tlecg04)
 
 ---
 
